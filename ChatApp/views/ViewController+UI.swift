@@ -1,33 +1,17 @@
 //
-//  ViewController.swift
+//  ViewController+UI.swift
 //  ChatApp
 //
-//  Created by Takumi Fuzawa on 2020/06/09.
+//  Created by Takumi Fuzawa on 2020/06/10.
 //  Copyright © 2020 Takumi Fuzawa. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+extension ViewController {
     
-    @IBOutlet var titleLable: UILabel!
-    
-    @IBOutlet var signInFacebookButton: UIButton!
-    
-    @IBOutlet var signInGoogleButton: UIButton!
-    
-    @IBOutlet var orLable: UILabel!
-    
-    @IBOutlet var createNewAcountButton: UIButton!
-    
-    @IBOutlet var termsOfServiceLable: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-    }
-    
-    func setupUI() {
+    func setHeaderTitle() {
+        
         let title = "Create New Acount"
         let subtitle = "\n\n\nHello World"
         //fontのレイアウト
@@ -40,16 +24,21 @@ class ViewController: UIViewController {
         
         attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: pargrapStyle, range: NSMakeRange(0, attributedSubTitle.length))
         titleLable.numberOfLines = 0
-        
         titleLable.attributedText = attributedText
         
+        
+    }
+    
+    func setupTermsLable() {
         let attributedTermsText = NSMutableAttributedString(string: "By clicking 'Create a new acount' you agree to our", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor(white: 0, alpha: 0.65)])
-        attributedText.append(attributedTermsText)
+        attributedTermsText.append(attributedTermsText)
         
         termsOfServiceLable.attributedText = attributedTermsText
         termsOfServiceLable.numberOfLines = 0
-        
-        //buttonのアイコン,レイアウトの設定
+    }
+    
+    //buttonのアイコン,レイアウトの設定
+    func setupFacebookButton() {
         signInFacebookButton.setTitle("Sign in with Facebook", for: UIControl.State.normal)
         signInFacebookButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         signInFacebookButton.backgroundColor = UIColor(red: 58 / 255, green: 85 / 255, blue: 159 / 255, alpha: 1)
@@ -59,7 +48,10 @@ class ViewController: UIViewController {
         signInFacebookButton.imageView?.contentMode = .scaleAspectFit
         signInFacebookButton.tintColor = .white
         signInFacebookButton.imageEdgeInsets = UIEdgeInsets(top: 12, left: -15, bottom: 12, right: 0)
-        
+    }
+    
+    //buttonのアイコン,レイアウトの設定
+    func setupGoogleButton() {
         signInGoogleButton.setTitle("Sign in with Google", for: UIControl.State.normal)
         signInGoogleButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         signInGoogleButton.backgroundColor = UIColor(red: 223 / 255, green: 74 / 255, blue: 50 / 255, alpha: 1)
@@ -69,7 +61,10 @@ class ViewController: UIViewController {
         signInGoogleButton.imageView?.contentMode = .scaleAspectFit
         signInGoogleButton.tintColor = .white
         signInGoogleButton.imageEdgeInsets = UIEdgeInsets(top: 12, left: -30, bottom: 12, right: 0)
-        
+    }
+    
+    //buttonのアイコン,レイアウトの設定
+    func setupNewAcountButton() {
         createNewAcountButton.setTitle("Create a new acount", for: UIControl.State.normal)
         createNewAcountButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         createNewAcountButton.backgroundColor = UIColor.black
@@ -77,6 +72,4 @@ class ViewController: UIViewController {
         createNewAcountButton.clipsToBounds = true
     }
     
-    
 }
-
