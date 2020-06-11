@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
     
@@ -54,5 +55,11 @@ class SignUpViewController: UIViewController {
         navigationController?.popViewController(animated: true)
         
     }
+    
+    @IBAction func signUpButton(_ sender: UIButton) {
+        
+        
+    }
+    
     
 }
