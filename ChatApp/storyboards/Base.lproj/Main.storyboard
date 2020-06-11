@@ -205,6 +205,9 @@
                                     <constraint firstAttribute="height" constant="50" id="tbC-ui-y4O"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpButton:" destination="bii-c8-6cX" eventType="touchUpInside" id="RqL-7U-Eub"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcN-WY-3n6">
                                 <rect key="frame" x="20" y="676" width="374" height="30"/>
