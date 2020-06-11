@@ -15,6 +15,10 @@
 		D62DBAAD248FCC42004B4E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62DBAAB248FCC42004B4E1E /* LaunchScreen.storyboard */; };
 		D62DBAB8248FCC42004B4E1E /* ChatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62DBAB7248FCC42004B4E1E /* ChatAppTests.swift */; };
 		D62DBAC3248FCC42004B4E1E /* ChatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62DBAC2248FCC42004B4E1E /* ChatAppUITests.swift */; };
+		D68019E7249202F700A4F81D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68019E6249202F700A4F81D /* SignInViewController.swift */; };
+		D68019E9249204C400A4F81D /* SignInViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68019E8249204C400A4F81D /* SignInViewController+UI.swift */; };
+		D68019EB24920C0F00A4F81D /* FogetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68019EA24920C0F00A4F81D /* FogetPasswordViewController.swift */; };
+		D68019ED24920C9100A4F81D /* FogetPasswordViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68019EC24920C9100A4F81D /* FogetPasswordViewController+UI.swift */; };
 		D681CB452491334B00C774AD /* SignUpViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D681CB442491334B00C774AD /* SignUpViewController+UI.swift */; };
 		D6D1817C24911D56007490FB /* ViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D1817B24911D56007490FB /* ViewController+UI.swift */; };
 		D6D1817E24912293007490FB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D1817D24912293007490FB /* SignUpViewController.swift */; };
@@ -52,6 +56,10 @@
 		D62DBABE248FCC42004B4E1E /* ChatAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62DBAC2248FCC42004B4E1E /* ChatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppUITests.swift; sourceTree = "<group>"; };
 		D62DBAC4248FCC42004B4E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D68019E6249202F700A4F81D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		D68019E8249204C400A4F81D /* SignInViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInViewController+UI.swift"; sourceTree = "<group>"; };
+		D68019EA24920C0F00A4F81D /* FogetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogetPasswordViewController.swift; sourceTree = "<group>"; };
+		D68019EC24920C9100A4F81D /* FogetPasswordViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FogetPasswordViewController+UI.swift"; sourceTree = "<group>"; };
 		D681CB442491334B00C774AD /* SignUpViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UI.swift"; sourceTree = "<group>"; };
 		D6D1817B24911D56007490FB /* ViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UI.swift"; sourceTree = "<group>"; };
 		D6D1817D24912293007490FB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +148,8 @@
 			children = (
 				D62DBAA4248FCC40004B4E1E /* ViewController.swift */,
 				D6D1817D24912293007490FB /* SignUpViewController.swift */,
+				D68019E6249202F700A4F81D /* SignInViewController.swift */,
+				D68019EA24920C0F00A4F81D /* FogetPasswordViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -149,6 +159,8 @@
 			children = (
 				D6D1817B24911D56007490FB /* ViewController+UI.swift */,
 				D681CB442491334B00C774AD /* SignUpViewController+UI.swift */,
+				D68019E8249204C400A4F81D /* SignInViewController+UI.swift */,
+				D68019EC24920C9100A4F81D /* FogetPasswordViewController+UI.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -292,12 +304,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68019E9249204C400A4F81D /* SignInViewController+UI.swift in Sources */,
+				D68019E7249202F700A4F81D /* SignInViewController.swift in Sources */,
 				D681CB452491334B00C774AD /* SignUpViewController+UI.swift in Sources */,
 				D62DBAA5248FCC40004B4E1E /* ViewController.swift in Sources */,
 				D62DBAA1248FCC40004B4E1E /* AppDelegate.swift in Sources */,
 				D6D1817C24911D56007490FB /* ViewController+UI.swift in Sources */,
 				D62DBAA3248FCC40004B4E1E /* SceneDelegate.swift in Sources */,
+				D68019ED24920C9100A4F81D /* FogetPasswordViewController+UI.swift in Sources */,
 				D6D1817E24912293007490FB /* SignUpViewController.swift in Sources */,
+				D68019EB24920C0F00A4F81D /* FogetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
