@@ -84,6 +84,11 @@ extension SignUpViewController {
         
     }
     
+    //キーボードを閉じるメソッド
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }
 
 //MARK - extension, delegate

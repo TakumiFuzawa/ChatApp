@@ -61,8 +61,26 @@ class SignUpViewController: UIViewController {
         
     }
     
-    @IBAction func signUpButton(_ sender: UIButton) {
+    func validateFields() {
+        guard let username = self.userNameTextField.text, !username.isEmpty else {
+            print("Plese enter an username!")
+            return
+        }
         
+        guard let email = self.emallTextField.text, !email.isEmpty else {
+            print("Plese enter an email address!")
+            return
+        }
+        
+        guard let pass = self.passTextField.text, !pass.isEmpty else {
+            print("Plese enter a password!")
+            return
+        }
+    }
+    
+    @IBAction func signUpButton(_ sender: UIButton) {
+        self.view.endEditing(true)
+        self.validateFields()
         guard let imageSelected = self.image else {
             print("Image is nil")
             return
@@ -75,7 +93,6 @@ class SignUpViewController: UIViewController {
             }
             
             guard let iamgeData = imageSelected.jpegData(compressionQuality: 0.4) else {
-                
                 return
             }
             
