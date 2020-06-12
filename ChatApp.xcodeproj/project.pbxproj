@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		431A0558AD44CA438B1D95E8 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555625E5B56972AB3946B388 /* Pods_ChatApp.framework */; };
+		431A0558AD44CA438B1D95E8 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555625E5B56972AB3946B388 /* Pods_ChatApp.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8616F16895EE7FDE396AF2C8 /* Pods_ChatApp_ChatAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA62E2FB3E5B2CFA3C84CEE9 /* Pods_ChatApp_ChatAppUITests.framework */; };
 		B06DC4E5CC6213BA3DE2CF84 /* Pods_ChatAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0AC11D38D504BC337C872E /* Pods_ChatAppTests.framework */; };
 		D60A7A6824926C6000B90BB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D60A7A6724926C6000B90BB6 /* GoogleService-Info.plist */; };
@@ -127,7 +127,6 @@
 				3C37F203166E09651BA9CACD /* Pods-ChatAppTests.debug.xcconfig */,
 				F2D5BE2CB24C7A26F8DCA48E /* Pods-ChatAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -460,12 +459,12 @@
 				D68019E9249204C400A4F81D /* SignInViewController+UI.swift in Sources */,
 				D68019E7249202F700A4F81D /* SignInViewController.swift in Sources */,
 				D681CB452491334B00C774AD /* SignUpViewController+UI.swift in Sources */,
+				D6D1817E24912293007490FB /* SignUpViewController.swift in Sources */,
 				D62DBAA5248FCC40004B4E1E /* ViewController.swift in Sources */,
-				D62DBAA1248FCC40004B4E1E /* AppDelegate.swift in Sources */,
 				D6D1817C24911D56007490FB /* ViewController+UI.swift in Sources */,
+				D62DBAA1248FCC40004B4E1E /* AppDelegate.swift in Sources */,
 				D62DBAA3248FCC40004B4E1E /* SceneDelegate.swift in Sources */,
 				D68019ED24920C9100A4F81D /* FogetPasswordViewController+UI.swift in Sources */,
-				D6D1817E24912293007490FB /* SignUpViewController.swift in Sources */,
 				D68019EB24920C0F00A4F81D /* FogetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

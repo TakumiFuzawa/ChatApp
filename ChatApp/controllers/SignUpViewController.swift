@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 class SignUpViewController: UIViewController {
     
@@ -31,6 +32,9 @@ class SignUpViewController: UIViewController {
     @IBOutlet var signUpButton: UIButton!
     
     @IBOutlet var signInButton: UIButton!
+    
+    //選択したimageを保存するための変数(optional)
+    var image: UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,28 +61,80 @@ class SignUpViewController: UIViewController {
         
     }
     
+    func validateFields() {
+        guard let username = self.userNameTextField.text, !username.isEmpty else {
+            print("Plese enter an username!")
+            return
+        }
+        
+        guard let email = self.emallTextField.text, !email.isEmpty else {
+            print("Plese enter an email address!")
+            return
+        }
+        
+        guard let pass = self.passTextField.text, !pass.isEmpty else {
+            print("Plese enter a password!")
+            return
+        }
+    }
+    
     @IBAction func signUpButton(_ sender: UIButton) {
-        Auth.auth().createUser(withEmail: "test2@gmail.com", password: "123456") { (authDataResult, error) in
+        self.view.endEditing(true)
+        self.validateFields()
+        guard let imageSelected = self.image else {
+            print("Image is nil")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: "test3@gmail.com", password: "123456") { (authDataResult, error) in
             if error != nil {
                 print(error!.localizedDescription)
+                return
+            }
+            
+            guard let iamgeData = imageSelected.jpegData(compressionQuality: 0.4) else {
                 return
             }
             
             if let authData = authDataResult {
                 print(authData.user.email)
                 
-                let dict: Dictionary<String, Any> = [
+                var dict: Dictionary<String, Any> = [
                     "uid": authData.user.uid,
                     "email": authData.user.email,
                     "profileImageUrl": "",
                     "status": "Welcom to ChatApp"
                 ]
                 
-                Database.database().reference().child("users").child(authData.user.uid).updateChildValues(dict) { (error, ref) in
-                    if error == nil {
-                        print("Done")
+                //storage管理
+                let storageRef = Storage.storage().reference(forURL: "gs://chatapp-ec006.appspot.com/")
+                let storageProfileRef = storageRef.child("profile").child(authData.user.uid)
+                
+                //新しいUserのProfileImageを保存するためのノード
+                let metadata = StorageMetadata()
+                //storageMetadataにはdatafileを記述するための共通の優先順位が含まれる
+                metadata.contentType = "image/jpg"
+                storageProfileRef.putData(iamgeData, metadata: metadata) { (storageMetaData, error) in
+                    if error != nil {
+                        print(error?.localizedDescription)
+                        return
                     }
+                    
+                    storageProfileRef.downloadURL { (url, error) in
+                        if let metaImageUrl = url?.absoluteURL {
+                            dict["profileImageUrl"] = metaImageUrl
+                            
+                            Database.database().reference().child("users").child(authData.user.uid).updateChildValues(dict) { (error, ref) in
+                                if error == nil {
+                                    print("Done")
+                                }
+                            }
+                        }
+                    }
+                    
                 }
+                
+                
             }
         }
         
